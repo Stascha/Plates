@@ -1,4 +1,4 @@
-/** Created by stasa on 30.9.16..**/
+/** Created by Stasa on 30.9.16..**/
 
 import java.util.Comparator;
 import java.util.Arrays;
@@ -60,15 +60,6 @@ public class Plates {
         plates[3] = new plate(32, 7);
 
         System.out.println( "Maximum profit is " + calculate(plates, k) );
-
-        System.out.println();
-        System.out.println();
-
-
-        for (int i=0; i < plates.length; i++){
-            System.out.println( plates[i].profit + " " + plates[i].lose);
-        }
-
 
     }
 
