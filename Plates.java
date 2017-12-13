@@ -1,20 +1,10 @@
-/**
- * Created by stasa on 30.9.16..
- */
-
+/** Created by stasa on 30.9.16..**/
 
 import java.util.Comparator;
 import java.util.Arrays;
 
 public class Plates {
-    /*
-       Ideja:
-       Sortiramo tanjire opadajuce po zbiru profit + lose, zatim
-       operemo prvih k a ostale ne. Korektnost ovog pristupa moze
-       da se dokaze tako sto posmatramo neka dva tanjira i pitamo se
-       koji od njih da operemo i kolika je razlika u profitu ako operemo
-       jedan umesto drugog.
-    */
+   
     static class plate
     {
         int profit;
@@ -34,22 +24,17 @@ public class Plates {
 
     static class compareBySumProfitAndLose implements Comparator<plate>
     {
-        // Kada compare vrati negtivnu vrednost ili 0 ne radi se zamena
-        // a kada vrati pozitivnu radi se zamena
         public int compare(plate a, plate b )
         {
             return (a.profit + a.lose) < (b.profit + b.lose) ? 1 : -1 ;
             // return - a.profit - a.lose + b.profit + b.lose;
         }
-
     }
 
-    // pretpostavlja se da je 0 <= k <= n
-    static int calculate(plate[] plates, int k){
+   static int calculate(plate[] plates, int k){
 
         int profit = 0;
 
-        // Sortira se niz u opadajućem poretku po zbiru dobiak + lose;
         Arrays.sort( plates, new compareBySumProfitAndLose() );
 
         for (int i=0; i < plates.length; i++){
@@ -61,10 +46,10 @@ public class Plates {
 
     public static void main(String[] args)
     {
-        // n tanjira
+        // number of plates
         int n = 4;
 
-        // k broj tanjira kojih treba oprati da bi se najvise zaradilo
+        // number of plates that can be cleaned
         int k = 2;
 
         plate[] plates = new plate[n];
